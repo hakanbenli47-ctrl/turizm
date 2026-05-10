@@ -939,7 +939,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
               <MapPin size={16} /> İstanbul / Türkiye
             </p>
             <p className="mt-2 flex items-center gap-2">
-              <Phone size={16} /> +90 XXX XXX XX XX
+              <Phone size={16} /> +90 553 354 50 18
             </p>
           </div>
         </div>
