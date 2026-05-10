@@ -22,7 +22,7 @@ import {
   Users,
 } from "lucide-react";
 
-const phone = "905XXXXXXXXX";
+const phone = "905533545018";
 
 const motionEase = [0.25, 0.1, 0.25, 1] as const;
 
@@ -480,117 +480,123 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
         viewport={{ once: true, amount: 0.22 }}
         className="border-y border-slate-200 bg-white/80 px-4 py-10 backdrop-blur-xl sm:px-6"
       >
-        <motion.div
-          variants={staggerParent}
-          className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
-        >
-          {galleryImages.map((img) => (
-            <motion.div
-              variants={cardReveal}
-              key={img}
-              className="h-[125px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:h-[165px]"
-            >
+       <motion.div
+  variants={staggerParent}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.05 }}
+  className="mx-auto grid w-full max-w-7xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
+>
+  {galleryImages.map((img, index) => (
+    <motion.div
+      variants={cardReveal}
+      key={img}
+      className="relative h-[130px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:h-[170px] lg:h-[190px]"
+    >
+      <img
+        src={img}
+        alt={`Transfer araç görseli ${index + 1}`}
+        loading={index < 4 ? "eager" : "lazy"}
+        fetchPriority={index < 4 ? "high" : "auto"}
+        decoding="async"
+        className="h-full w-full object-cover transition duration-500 hover:scale-105"
+      />
+    </motion.div>
+  ))}
+</motion.div>
+      </motion.section>
+
+     <motion.section
+  variants={softReveal}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.05 }}
+  className="relative block w-full overflow-visible px-4 py-14 sm:px-6 sm:py-24"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-10 max-w-3xl">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500 sm:text-sm">
+        Hizmet Konseptleri
+      </p>
+
+      <h2 className="mt-3 text-2xl font-black leading-tight text-slate-950 sm:text-4xl md:text-5xl">
+        Her ihtiyaca ayrı çözüm, her yolculuğa ayrı plan.
+      </h2>
+    </div>
+
+    <div className="space-y-6 sm:space-y-7">
+      {conceptSections.map((item, index) => {
+        const Icon = item.icon;
+        const reverse = index % 2 === 1;
+
+        return (
+          <motion.div
+            key={item.title}
+            variants={index % 2 === 0 ? revealLeft : revealRight}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.08 }}
+            className={`grid w-full overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition duration-500 sm:rounded-[2rem] lg:grid-cols-2 lg:hover:-translate-y-1 lg:hover:shadow-[0_35px_110px_rgba(15,23,42,0.12)] ${
+              reverse ? "lg:[&>div:first-child]:order-2" : ""
+            }`}
+          >
+            <div className="relative h-[230px] w-full overflow-hidden sm:h-[360px] lg:h-auto lg:min-h-[380px]">
               <img
-                src={img}
-                alt="Transfer araç görseli"
+                src={item.image}
+                alt={item.title}
                 loading="lazy"
-                className="h-full w-full object-cover transition duration-700 hover:scale-110"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
               />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.section>
 
-      <motion.section
-        variants={softReveal}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="relative px-4 py-16 sm:px-6 sm:py-24"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 sm:text-sm">
-              Hizmet Konseptleri
-            </p>
-            <h2 className="mt-3 text-3xl font-black leading-tight text-slate-950 sm:text-4xl md:text-5xl">
-              Her ihtiyaca ayrı çözüm, her yolculuğa ayrı plan.
-            </h2>
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
 
-          <div className="space-y-7">
-            {conceptSections.map((item, index) => {
-              const Icon = item.icon;
-              const reverse = index % 2 === 1;
+              <div className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-white/15 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-xl sm:bottom-5 sm:left-5 sm:px-4 sm:text-xs">
+                {item.subtitle}
+              </div>
+            </div>
 
-              return (
-                <motion.div
-                  key={item.title}
-                  variants={index % 2 === 0 ? revealLeft : revealRight}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.22 }}
-                  className={`grid overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-[0_25px_90px_rgba(15,23,42,0.08)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_35px_110px_rgba(15,23,42,0.12)] lg:grid-cols-2 ${
-                    reverse ? "lg:[&>div:first-child]:order-2" : ""
-                  }`}
-                >
-                  <div className="relative min-h-[240px] overflow-hidden sm:min-h-[380px]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
+            <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10">
+              <div
+                className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl sm:h-14 sm:w-14 ${gradientIcon}`}
+              >
+                <Icon size={24} className="sm:w-[27px] sm:h-[27px]" />
+              </div>
+
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500 sm:text-xs">
+                {item.subtitle}
+              </p>
+
+              <h3 className="mt-3 text-xl font-black leading-tight text-slate-950 sm:text-3xl lg:text-4xl">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+                {item.desc}
+              </p>
+
+              <div className="mt-6 grid gap-3 grid-cols-1 sm:grid-cols-2">
+                {item.bullets.map((bullet) => (
+                  <div
+                    key={bullet}
+                    className="flex items-start gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-3 transition duration-300 hover:bg-white hover:shadow-sm"
+                  >
+                    <CheckCircle2
+                      size={17}
+                      className="mt-0.5 shrink-0 text-slate-700"
                     />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
-
-                    <div className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur-xl">
-                      {item.subtitle}
-                    </div>
+                    <span className="text-sm leading-6 text-slate-600">
+                      {bullet}
+                    </span>
                   </div>
-
-                  <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10">
-                    <div
-                      className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl ${gradientIcon}`}
-                    >
-                      <Icon size={27} />
-                    </div>
-
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500 sm:text-xs">
-                      {item.subtitle}
-                    </p>
-
-                    <h3 className="mt-3 text-2xl font-black leading-tight text-slate-950 sm:text-4xl">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                      {item.desc}
-                    </p>
-
-                    <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                      {item.bullets.map((bullet) => (
-                        <div
-                          key={bullet}
-                          className="flex items-start gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-3 transition duration-300 hover:bg-white hover:shadow-sm"
-                        >
-                          <CheckCircle2
-                            size={17}
-                            className="mt-0.5 shrink-0 text-slate-700"
-                          />
-                          <span className="text-sm leading-6 text-slate-600">
-                            {bullet}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </motion.section>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</motion.section>
 
       <motion.section
         variants={softReveal}
