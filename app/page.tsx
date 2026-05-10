@@ -122,7 +122,7 @@ const videoCards = [
     icon: Gem,
   },
   {
-    title: "Engelli Araç Hizmeti",
+    title: "Engelsiz Araç Hizmeti",
     desc: "Asansörlü araç desteği ve güvenli ulaşım sürecini gösteren video alanı.",
     video: "/vipvideo2.mp4",
     icon: Accessibility,
@@ -140,7 +140,7 @@ const conceptSections = [
     icon: Accessibility,
     title: "Engel Tanımayan Ulaşım",
     subtitle: "Asansörlü ve erişilebilir araç desteği",
-    desc: "Tam donanımlı, asansörlü ve güvenlik standartları yüksek araçlarla engelli misafirlerimize güvenli, konforlu ve huzurlu ulaşım sağlıyoruz.",
+    desc: "Tam donanımlı, asansörlü ve güvenlik standartları yüksek araçlarla Özel misafirlerimize güvenli, konforlu ve huzurlu ulaşım sağlıyoruz.",
     bullets: [
       "Asansörlü araç desteği",
       "Güvenli sabitleme sistemi",
@@ -225,7 +225,7 @@ const reasons = [
   {
     icon: Accessibility,
     title: "Hassasiyet",
-    desc: "Engelli ulaşımında dikkatli, duyarlı ve destekleyici hizmet.",
+    desc: "Engelsiz ulaşımında dikkatli, duyarlı ve destekleyici hizmet.",
   },
   {
     icon: Clock,
@@ -277,7 +277,7 @@ export default function Home() {
                 Sezen / Mir Turizm
               </p>
               <h1 className="mt-1 text-sm font-black text-slate-950 sm:text-xl">
-                VIP • Engelli Araç • Düğün • Kurumsal Transfer
+                VIP • Engelsiz Araç • Düğün • Kurumsal Transfer
               </h1>
             </div>
 
@@ -306,7 +306,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 max-w-xl text-[15px] leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                VIP transferden engelli araç hizmetine, düğün ulaşımından
+                VIP transferden engelsiz araç hizmetine, düğün ulaşımından
                 kurumsal organizasyonlara kadar her ihtiyaca özel, planlı ve
                 prestijli ulaşım çözümleri sunuyoruz.
               </p>
@@ -394,7 +394,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
               icon: Gem,
             },
             {
-              title: "Engelli Araç",
+              title: "Engelsiz Araç",
               desc: "Asansörlü güvenli ulaşım",
               icon: Accessibility,
             },
@@ -462,7 +462,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
           </p>
 
           <p className="mt-2 text-[11px] leading-5 text-white/75 sm:text-xs">
-            VIP, engelli araç, düğün ve organizasyon transferleri için tek noktadan profesyonel çözüm.
+            VIP, engelsiz araç, düğün ve organizasyon transferleri için tek noktadan profesyonel çözüm.
           </p>
         </div>
       </div>
@@ -856,7 +856,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
               </h2>
 
               <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                VIP transfer, engelli araç, düğün, misafir transferi, kurumsal
+                VIP transfer, engelsiz araç, düğün, misafir transferi, kurumsal
                 taşıma veya organizasyon desteği için bize ulaşın.
               </p>
             </div>
@@ -920,7 +920,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
               Sezen / Mir Turizm
             </h3>
             <p className="mt-3 leading-7">
-              VIP transfer, engelli araç, düğün, misafir transferi, kurumsal
+              VIP transfer, engelsiz araç, düğün, misafir transferi, kurumsal
               taşıma ve özel organizasyon ulaşım hizmetleri.
             </p>
           </div>
@@ -928,7 +928,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
           <div>
             <h4 className="mb-3 font-semibold text-slate-950">Hizmetler</h4>
             <p>VIP Transfer</p>
-            <p>Engelli Araç Hizmeti</p>
+            <p>Engelsiz Araç Hizmeti</p>
             <p>Düğün ve Gelin Arabası</p>
             <p>Kurumsal Transfer</p>
           </div>
