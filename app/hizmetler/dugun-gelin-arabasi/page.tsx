@@ -191,7 +191,7 @@ export default function DugunGelinArabasiPage() {
               <div className="relative overflow-hidden rounded-[2.2rem] border border-pink-100 bg-rose-50/65 p-3 shadow-2xl backdrop-blur-xl">
                 <div className="relative h-[390px] overflow-hidden rounded-[1.7rem] sm:h-[560px]">
                   <img
-                    src="/vip-3.jpg"
+                    src="/vip11.jpg"
                     alt="Düğün ve gelin arabası hizmeti"
                     className="h-full w-full object-cover"
                   />
@@ -359,7 +359,7 @@ export default function DugunGelinArabasiPage() {
 
       <section className="px-4 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
-          {["/vip-3.jpg", "/vip-4.jpg", "/vip-6.jpg"].map((img, index) => (
+          {["/vip-3.jpg", "/vip-4.jpg", "/vip10.jpg"].map((img, index) => (
             <div
               key={img}
               className={`relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-rose-300 via-pink-200 to-purple-300 p-2 shadow-xl shadow-pink-200/40 ${

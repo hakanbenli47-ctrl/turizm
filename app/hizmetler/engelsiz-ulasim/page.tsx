@@ -147,7 +147,7 @@ export default function EngelsizUlasimPage() {
               <div className="relative overflow-hidden rounded-[2.2rem] border border-white/80 bg-white/70 p-3 shadow-2xl backdrop-blur-xl">
                 <div className="relative h-[390px] overflow-hidden rounded-[1.7rem] sm:h-[560px]">
                   <img
-                    src="/vip-1.jpg"
+                    src="/vip2.jpg"
                     alt="Engelsiz ulaşım hizmeti"
                     className="h-full w-full object-cover"
                   />
@@ -324,7 +324,7 @@ export default function EngelsizUlasimPage() {
       <section className="px-4 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-4 md:grid-cols-3">
-            {["/vip-1.jpg", "/vip-2.jpg", "/vip-3.jpg"].map((img, index) => (
+            {["/vip-1.jpg", "/vip1.jpg", "/vip-3.jpg"].map((img, index) => (
               <div
                 key={img}
                 className={`relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-cyan-200 via-purple-200 to-amber-200 p-2 shadow-xl ${

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   Accessibility,
@@ -106,9 +107,9 @@ const goldText =
   "bg-[linear-gradient(90deg,#ff335f,#ff8a00,#23d5ff,#7c3aed,#ff335f)] bg-[length:300%_100%] bg-clip-text text-transparent animate-[rgbText_5s_linear_infinite] drop-shadow-[0_0_18px_rgba(124,58,237,0.18)]";
 
 const galleryImages = [
-  "/vip-1.jpg",
+  "/vip1.jpg",
   "/vip-2.jpg",
-  "/vip-3.jpg",
+  "/vip11.jpg",
   "/vip-4.jpg",
   "/vip-5.jpg",
   "/vip-6.jpg",
@@ -147,7 +148,7 @@ const conceptSections = [
     "Empati odaklı destek",
     "Ev, hastane, otel ve özel nokta transferi",
   ],
-  image: "/vip-1.jpg",
+  image: "/vip1.jpg",
   link: "/hizmetler/engelsiz-ulasim",
 },
   {
@@ -175,7 +176,7 @@ link: "/hizmetler/vip-transfer",
       "Davetli ulaşımı",
       "Düğün salonu ve otel transferi",
     ],
-   image: "/vip-3.jpg",
+   image: "/vip11.jpg",
 link: "/hizmetler/dugun-gelin-arabasi",
   },
   {
@@ -264,8 +265,53 @@ const steps = [
 ];
 
 export default function Home() {
+  const [introGoster, setIntroGoster] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIntroGoster(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-[#12091f] text-[#ffeec7]">
+    {introGoster && (
+  <div className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#12091f]">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,51,95,0.25),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(35,213,255,0.20),transparent_35%),linear-gradient(135deg,#12091f_0%,#241039_50%,#102b45_100%)]" />
+
+    <div className="absolute h-[420px] w-[420px] rounded-full border border-fuchsia-300/15 animate-mirRing1" />
+    <div className="absolute h-[260px] w-[260px] rounded-full border border-cyan-300/20 animate-mirRing2" />
+
+    <div className="absolute left-[-120px] top-[-120px] h-[350px] w-[350px] rounded-full bg-[#ff335f]/20 blur-[100px]" />
+    <div className="absolute bottom-[-120px] right-[-120px] h-[350px] w-[350px] rounded-full bg-[#23d5ff]/20 blur-[100px]" />
+
+    <div className="relative z-10 animate-mirLuxuryIntro text-center px-6">
+      <p className="mb-4 text-[11px] font-black uppercase tracking-[0.45em] text-[#ffb86b] sm:text-sm">
+        PREMIUM TRANSFER EXPERIENCE
+      </p>
+
+      <h1 className="bg-[linear-gradient(90deg,#ff335f,#ff8a00,#23d5ff,#7c3aed,#ff335f)] bg-[length:300%_100%] bg-clip-text text-5xl font-black tracking-[0.28em] text-transparent animate-[rgbText_5s_linear_infinite] drop-shadow-[0_0_35px_rgba(124,58,237,0.35)] sm:text-8xl">
+        MİR
+      </h1>
+
+      <p className="mt-3 text-2xl font-black tracking-[0.65em] text-[#ffeec7] sm:text-5xl">
+        TURİZM
+      </p>
+
+      <p className="mt-6 bg-[linear-gradient(90deg,#ffe66d,#ff8a00,#23d5ff)] bg-clip-text font-serif text-3xl italic text-transparent sm:text-6xl">
+        imzası ile
+      </p>
+
+      <div className="mx-auto mt-8 h-[1px] w-52 bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
+
+      <p className="mt-5 text-xs font-semibold tracking-[0.25em] text-[#90e8ff]/80 sm:text-sm">
+        VIP • ORGANİZASYON • ENGELSİZ ULAŞIM
+      </p>
+    </div>
+  </div>
+)}
       <style jsx global>{`
         @keyframes rgbText {
           0% { background-position: 0% 50%; }
@@ -283,7 +329,77 @@ export default function Home() {
           0%, 100% { transform: scale(1); opacity: .42; }
           50% { transform: scale(1.08); opacity: .78; }
         }
-      `}</style>
+@keyframes mirLuxuryIntro {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(25px);
+    filter: blur(12px);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(1.02) translateY(0);
+    filter: blur(0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.08) translateY(-20px);
+    filter: blur(10px);
+  }
+}
+
+@keyframes mirRing1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes mirRing2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+.animate-mirLuxuryIntro {
+  animation: mirLuxuryIntro 3s ease-in-out forwards;
+}
+
+.animate-mirRing1 {
+  animation: mirRing1 3s ease-in-out forwards;
+}
+
+.animate-mirRing2 {
+  animation: mirRing2 3s ease-in-out forwards;
+}
+      `}
+      </style>
       
       <motion.section
         initial="hidden"
@@ -298,9 +414,9 @@ export default function Home() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 pt-5 sm:px-6 lg:pb-24 lg:pt-8">
           <header className="mb-10 flex items-center justify-between gap-3 rounded-[1.6rem] border border-fuchsia-300/25 bg-[#291044]/72 px-4 py-4 shadow-[0_20px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl transition duration-500 hover:bg-[#35165c]/90 sm:rounded-full sm:px-6">
             <div className="min-w-0">
-              <p className="text-[9px] uppercase tracking-[0.22em] text-[#ffb86b] sm:text-xs sm:tracking-[0.32em]">
-                Sezen / Mir Turizm
-              </p>
+              <p className="text-[9px] tracking-[0.22em] text-[#ffb86b] sm:text-xs sm:tracking-[0.32em]">
+  MİR TURİZM
+</p>
               <h1 className="mt-1 text-sm font-black text-[#ffeec7] sm:text-xl">
                 VIP • Engelsiz Araç • Düğün • Kurumsal Transfer
               </h1>
@@ -322,19 +438,29 @@ export default function Home() {
               <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-fuchsia-300/25 bg-[#2a1044]/70 px-3 py-2 shadow-sm backdrop-blur-xl transition duration-500 hover:bg-[#241039]/90 sm:px-4">
                 <Sparkles size={15} className="shrink-0 text-[#b0894f]" />
                 <span className="text-[11px] font-medium text-[#90e8ff] sm:text-sm">
-                  Konfor, erişilebilirlik ve lüks ulaşım bir arada
+               Mir Turizm imzasıyla güvenli ve özel ulaşım
                 </span>
               </div>
 
-              <h2 className="text-[38px] font-black leading-[1.02] tracking-tight text-[#ffeec7] sm:text-5xl md:text-6xl lg:text-7xl">
-                Yolculuğun <span className={goldText}>en özel</span> hali.
-              </h2>
+      <h2 className="relative text-[42px] font-black leading-[0.9] tracking-tight sm:text-6xl md:text-7xl lg:text-[96px]">
+  <span className="absolute -left-6 top-2 h-24 w-24 rounded-full bg-[#ff1493]/30 blur-3xl" />
+  <span className="absolute right-10 top-10 h-20 w-20 rounded-full bg-[#ff4db8]/20 blur-3xl" />
 
-              <p className="mt-6 max-w-xl text-[15px] leading-7 text-[#90e8ff] sm:text-lg sm:leading-8">
-                VIP transferden engelsiz araç hizmetine, düğün ulaşımından
-                kurumsal organizasyonlara kadar her ihtiyaca özel, planlı ve
-                prestijli ulaşım çözümleri sunuyoruz.
-              </p>
+  <span className="block uppercase tracking-[0.08em] text-[#ff1493] drop-shadow-[0_0_12px_rgba(255,20,147,0.55)] sm:drop-shadow-[0_0_22px_rgba(255,20,147,0.75)]">
+    MİR TURİZM
+  </span>
+
+  <span className="mt-3 block text-[18px] font-bold uppercase tracking-[0.7em] text-[#ff8fd1] sm:text-[26px]">
+    İMZASI İLE
+  </span>
+
+  <span className="mt-6 block h-[2px] w-32 bg-gradient-to-r from-transparent via-[#ff1493] to-transparent sm:w-48" />
+</h2>
+             <p className="mt-6 max-w-2xl text-[15px] leading-7 text-[#90e8ff] sm:text-lg sm:leading-8">
+  Bir zamanlar bizim için sadece bir hayaldi. Bugün bu hayali gerçeğe
+  dönüştürdük. Şimdi en büyük amacımız; sizin özel anlarınıza eşlik etmek,
+  güveni, konforu ve saygıyı aynı yolculukta buluşturmak.
+</p>
 
               <div className="mt-8 grid gap-3 sm:flex sm:gap-4">
                 <a
@@ -399,7 +525,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
             </p>
 
             <h3 className="mt-2 max-w-[430px] text-xl font-black leading-tight tracking-[-0.03em] text-[#ffeec7] sm:mt-3 sm:text-4xl">
-              Araç, rota ve zamanlama tek merkezden planlanır.
+             Hayallerinize giden yol Mir Turizm imzasıyla planlanır.
             </h3>
           </div>
 
@@ -483,7 +609,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
 
         <div className="mt-4 rounded-[1.2rem] sm:mt-0 sm:rounded-[1.6rem] bg-gradient-to-r from-[#ff335f] via-[#ff8a00] to-[#23d5ff] p-4 sm:p-5 text-[#fff7d6] shadow-xl shadow-fuchsia-500/25">
           <p className="text-xs font-black sm:text-base">
-            Kurumsal, sade ve güven veren transfer deneyimi.
+          Mir Turizm imzasıyla her yolculuk daha özel.
           </p>
 
           <p className="mt-2 text-[11px] leading-5 text-[#fff7d6]/75 sm:text-xs">
@@ -497,6 +623,122 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
           </div>
         </div>
       </motion.section>
+    <motion.section
+  variants={softReveal}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.12 }}
+  className="relative overflow-hidden px-4 py-14 sm:px-6 sm:py-20"
+>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,20,147,0.20),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(35,213,255,0.13),transparent_32%),linear-gradient(135deg,#12091f_0%,#241039_50%,#102b45_100%)]" />
+
+  <div className="absolute left-[-120px] top-[-80px] h-[300px] w-[300px] rounded-full bg-[#ff1493]/15 blur-[100px]" />
+  <div className="absolute right-[-120px] bottom-[-80px] h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[110px]" />
+
+  <div className="relative z-10 mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-fuchsia-300/20 bg-[#1d102f]/85 shadow-[0_30px_120px_rgba(15,23,42,0.22)] backdrop-blur-xl sm:rounded-[3rem]">
+    <div className="grid gap-0 lg:grid-cols-2">
+      <div className="relative min-h-[380px] lg:min-h-[720px]">
+        <img
+          src="/maybach.jpg"
+          alt="Mir Turizm VIP Maybach"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-[#12091f]/5 via-transparent to-[#12091f]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#12091f]/80 via-transparent to-transparent" />
+
+        <div className="absolute bottom-6 left-6 right-6 rounded-[2rem] border border-fuchsia-300/20 bg-[#12091f]/70 p-5 backdrop-blur-xl">
+          <p className="text-[11px] font-black uppercase tracking-[0.32em] text-[#ff8fd1]">
+            15 Yıllık Tecrübe
+          </p>
+
+          <h3 className="mt-2 text-2xl font-black text-[#ffeec7]">
+            Mir Turizm İmzası
+          </h3>
+
+          <p className="mt-2 text-sm leading-6 text-[#90e8ff]">
+            Ultra VIP konfor ve engelsiz ulaşım çözümleriyle her yolculuğun
+            merkezinde güven, prestij ve özen var.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-14">
+        <p className="text-[11px] font-black uppercase tracking-[0.35em] text-[#ff8fd1] sm:text-sm">
+          BİZ KİMİZ?
+        </p>
+
+        <h2 className="mt-5 text-3xl font-black leading-tight tracking-[-0.04em] text-[#ffeec7] sm:text-5xl">
+          15 Yıllık Tecrübe,
+          <span className="block text-[#ff1493] drop-shadow-[0_0_20px_rgba(255,20,147,0.45)]">
+            Engelsiz Hizmet,
+          </span>
+          Ultra Lüks Konfor.
+        </h2>
+
+        <p className="mt-6 text-sm leading-7 text-[#90e8ff] sm:text-base sm:leading-8">
+          Mir Turizm olarak, taşımacılık sektöründe geçirdiğimiz 15 yıllık
+          serüvenimizde tek bir pusulamız oldu: müşteri memnuniyeti ve güven.
+          Profesyonel ekibimiz ve yüksek hizmet standartlarımızla, her
+          yolculuğu özel bir deneyime dönüştürmek için çalışıyoruz.
+        </p>
+
+        <div className="mt-8 grid gap-4">
+          <div className="rounded-3xl border border-fuchsia-300/20 bg-[#241039]/85 p-5">
+            <h3 className="text-lg font-black text-[#ff1493]">
+              Ultra VIP Hizmet
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-[#90e8ff]">
+              Mercedes Vito araçlarımızın Maybach konforuyla donatılmış iç
+              tasarımıyla, iş seyahatlerinizden özel günlerinize kadar her
+              anınızda size prestijli bir yol arkadaşlığı sunuyoruz.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-fuchsia-300/20 bg-[#241039]/85 p-5">
+            <h3 className="text-lg font-black text-[#ff1493]">
+              Engelsiz Ulaşım
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-[#90e8ff]">
+              Sektördeki en büyük hassasiyetimiz olan engelsiz ulaşım
+              hizmetimizle, özel donanımlı araçlarımız sayesinde ulaşımda
+              sınırları kaldırıyoruz. Konforunuz ve güvenliğiniz bizim
+              önceliğimizdir.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-fuchsia-300/20 bg-[#241039]/85 p-5">
+            <h3 className="text-lg font-black text-[#ff1493]">
+              Profesyonel Ekip
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-[#90e8ff]">
+              15 yıllık sektör birikimimizle, her türlü transfer ihtiyacınıza
+              profesyonel, dakik ve çözüm odaklı yaklaşıyoruz.
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-8 text-base font-semibold leading-7 text-[#ffeec7] sm:text-lg">
+          Mir Turizm çatısı altında biz sadece yolcu taşımıyoruz;
+          <span className="text-[#ff1493]">
+            {" "}
+            hayalleri, mutlulukları ve sevdiklerinizi{" "}
+          </span>
+          büyük bir özenle hedefine ulaştırıyoruz.
+        </p>
+
+        <div className="mt-7 rounded-3xl border border-fuchsia-300/25 bg-[#ff1493]/10 p-5">
+          <p className="text-xl font-black leading-tight text-[#ffeec7] sm:text-2xl">
+            Ulaşımda kalite ve güvenin adresi:
+            <span className="block text-[#ff1493]">
+              Mir Turizm.
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.section>
 <motion.section
   variants={softReveal}
   initial="hidden"
@@ -528,7 +770,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
       </div>
 
       <p className="max-w-2xl text-sm font-medium leading-7 text-[#90e8ff] sm:text-base sm:leading-8 lg:ml-auto">
-        Sezen / Mir Turizm olarak engelli bireyler, huzurevinde yaşayan
+        Mir Turizm olarak engelli bireyler, huzurevinde yaşayan
         büyüklerimiz ve gazilerimiz için ulaşım hizmetlerini tamamen ücretsiz
         sunuyoruz. Güvenli, planlı ve saygılı ulaşım desteğiyle her yolculuğu
         özenle organize ediyoruz.
@@ -670,7 +912,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
       </p>
 
       <h2 className="mt-3 text-2xl font-black leading-tight tracking-[-0.03em] text-[#ffeec7] sm:text-4xl md:text-5xl">
-        Her ihtiyaca ayrı çözüm, her yolculuğa ayrı plan.
+     Sevginin, mutluluğun ve güvenin taşındığı özel yolculuklar.
       </h2>
     </div>
 
@@ -779,7 +1021,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
               Neden Biz?
             </p>
             <h2 className="mt-3 text-3xl font-black leading-tight tracking-[-0.03em] sm:text-4xl md:text-5xl">
-              Güven, hassasiyet, dakiklik ve konfor aynı hizmette.
+             Biz sadece taşıma yapmıyoruz, her yolculuğa değer katıyoruz.
             </h2>
           </div>
 
@@ -1020,12 +1262,12 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight tracking-[-0.03em] text-[#ffeec7] sm:text-4xl md:text-5xl">
-                Hangi hizmete ihtiyacınız varsa, rotayı birlikte planlayalım.
+                Siz hayal edin, Mir Turizm yolunuzu hazırlasın.
               </h2>
 
               <p className="mt-5 max-w-3xl text-sm font-medium leading-7 text-[#90e8ff] sm:text-base sm:leading-8">
-                VIP transfer, engelsiz araç, düğün, misafir transferi, kurumsal
-                taşıma veya organizasyon desteği için bize ulaşın.
+             Mir Turizm imzasıyla güvenli, konforlu ve saygılı ulaşım.
+Çünkü bizim için her yolcu özel, her yolculuk bir emanettir.
               </p>
             </div>
 
