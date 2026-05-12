@@ -22,36 +22,36 @@ const hizmetler = [
   {
     icon: Hospital,
     title: "Hastane Ulaşımı",
-    desc: "Randevu, kontrol ve tedavi süreçlerinde güvenli, konforlu ve ücretsiz ulaşım desteği sağlanır.",
+    desc: "Randevu, kontrol ve tedavi süreçlerinde güvenli ve konforlu ulaşım desteği sağlanır. Ücretlendirme güzergah ve mesafeye göre belirlenir.",
     color: "from-rose-400 via-orange-400 to-amber-300",
   },
   {
     icon: Home,
     title: "Evden Alım",
-    desc: "Kapınızdan alınır, gideceğiniz noktaya rahat, güvenli ve ücretsiz şekilde ulaştırılırsınız.",
+    desc: "Kapınızdan alınır, gideceğiniz noktaya rahat ve güvenli şekilde ulaştırılırsınız. Ücretlendirme mesafeye göre yapılır.",
     color: "from-emerald-400 via-teal-400 to-cyan-400",
   },
   {
     icon: Plane,
     title: "Havalimanı Transferi",
-    desc: "Uçuş öncesi ve sonrası erişilebilir araç desteğiyle yolculuk süreci kolaylaştırılır.",
+    desc: "Uçuş öncesi ve sonrası erişilebilir araç desteğiyle yolculuk süreci kolaylaştırılır. Ücretlendirme havalimanı ve mesafeye göre belirlenir.",
     color: "from-cyan-400 via-blue-400 to-indigo-400",
   },
   {
     icon: CalendarCheck,
     title: "Sosyal Yaşam & Özel Günler",
-    desc: "Ziyaret, davet, etkinlik ve özel günlerde özgürce hareket edebilmeniz için ücretsiz destek sunulur.",
+    desc: "Ziyaret, davet, etkinlik ve özel günlerde planlı ulaşım desteği sağlanır. Ücretlendirme güzergah ve mesafeye göre belirlenir.",
     color: "from-fuchsia-400 via-purple-400 to-pink-400",
   },
 ];
 
 const guvenlik = [
-  "Özel gereksinimli bireyler için ücretsiz erişilebilir ulaşım",
   "Asansörlü ve erişilebilir araç kullanımı",
   "Güvenli sabitleme sistemi",
   "Kapıdan alım ve güvenli bırakma desteği",
   "Saygılı, sabırlı ve destekleyici ekip yaklaşımı",
   "Hastane, ev, otel, havalimanı ve şehir içi ulaşım desteği",
+  "Ücretlendirme güzergah, hizmet türü ve mesafeye göre belirlenir",
 ];
 
 export default function EngelsizUlasimPage() {
@@ -95,15 +95,15 @@ export default function EngelsizUlasimPage() {
 
               <p className="mt-6 max-w-2xl text-base font-semibold leading-8 sm:text-lg">
                 <span className="bg-gradient-to-r from-cyan-700 via-purple-700 to-amber-600 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_7s_linear_infinite]">
-                  Erişilebilir ulaşım desteği, hayatın her alanına daha rahat
-                  ulaşabilmeniz için ücretsiz sunulur. Amacımız yalnızca bir
-                  yere götürmek değil; kendinizi rahat, değerli ve özgür
-                  hissettiren güvenli bir yolculuk deneyimi sağlamaktır.
+                  Erişilebilir araç desteği; hastane, evden alım, havalimanı ve
+                  şehir içi ulaşım ihtiyaçlarında güvenli ve konforlu şekilde
+                  planlanır. Ücretlendirme hizmet türü, güzergah ve mesafeye göre
+                  belirlenir.
                 </span>
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                {["Ücretsiz Hizmet", "Asansörlü Araç", "Güvenli Sabitleme"].map(
+                {["Mesafeye Göre Ücret", "Asansörlü Araç", "Güvenli Sabitleme"].map(
                   (item) => (
                     <span
                       key={item}
@@ -117,12 +117,12 @@ export default function EngelsizUlasimPage() {
 
               <div className="mt-8 grid gap-3 sm:flex">
                 <a
-                  href={`https://wa.me/${phone}?text=Merhaba,%20engelsiz%20ula%C5%9F%C4%B1m%20%C3%BCcretsiz%20hizmetinden%20yararlanmak%20istiyorum.`}
+                  href={`https://wa.me/${phone}?text=Merhaba,%20engelsiz%20ula%C5%9F%C4%B1m%20hizmeti%20i%C3%A7in%20fiyat%20almak%20istiyorum.%0AAl%C4%B1nacak%20yer:%0AGidilecek%20yer:%0ATarih%20/%20Saat:`}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-400 via-cyan-500 to-purple-500 px-6 py-4 text-sm font-black text-white shadow-xl shadow-cyan-300/40 transition hover:-translate-y-1"
                 >
-                  Ücretsiz Destek Al
+                  Fiyat Bilgisi Al
                   <ArrowRight size={18} />
                 </a>
 
@@ -146,20 +146,20 @@ export default function EngelsizUlasimPage() {
 
               <div className="relative overflow-hidden rounded-[2.2rem] border border-white/80 bg-white/70 p-3 shadow-2xl backdrop-blur-xl">
                 <div className="relative h-[390px] overflow-hidden rounded-[1.7rem] sm:h-[560px]">
-                  <img
-                    src="/vip2.jpg"
-                    alt="Engelsiz ulaşım hizmeti"
-                    className="h-full w-full object-cover"
-                  />
+               <img
+  src="/vip2.jpg"
+  alt="Engelsiz ulaşım hizmeti"
+  className="h-full w-full object-cover scale-90"
+/>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/70 via-purple-900/10 to-transparent" />
 
                   <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/25 bg-white/20 p-5 text-white shadow-2xl backdrop-blur-xl">
                     <p className="bg-gradient-to-r from-cyan-200 via-white to-amber-200 bg-[length:220%_100%] bg-clip-text text-base font-black text-transparent animate-[textFlow_5s_linear_infinite]">
-                      Daha rahat, daha özgür, daha erişilebilir.
+                      Daha rahat, daha güvenli, daha erişilebilir.
                     </p>
                     <p className="mt-2 text-sm font-semibold leading-6 text-white/90">
-                      Ücretsiz, güvenli, saygılı ve konforlu ulaşım desteği.
+                      Ücretlendirme güzergah ve mesafeye göre belirlenir.
                     </p>
                   </div>
                 </div>
@@ -180,17 +180,17 @@ export default function EngelsizUlasimPage() {
 
               <h2 className="mt-5 text-3xl font-black leading-tight sm:text-5xl">
                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-purple-600 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_6s_linear_infinite]">
-                  Bu hizmet ücretsiz sunulur.
+                  Erişilebilir ulaşım hizmetleri planlı şekilde sağlanır.
                 </span>
               </h2>
 
               <p className="mt-5 text-base font-semibold leading-8">
                 <span className="bg-gradient-to-r from-sky-700 via-purple-700 to-pink-600 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_7s_linear_infinite]">
-                  Ulaşımda en önemli şey kişinin kendini yük gibi değil, hayatın
-                  doğal akışının içinde hissetmesidir. Bu yüzden hizmetin dili
-                  de yaklaşımı da nettir: erişilebilir ulaşım desteği ücretsizdir.
-                  Her yolculukta rahatlık, saygı, güven ve özgürlük hissi
-                  önceliğimizdir.
+                  Hastane, evden alım, havalimanı transferi, sosyal yaşam ve
+                  özel gün ulaşımlarında hizmetler güzergah, mesafe ve ihtiyaç
+                  durumuna göre ücretlendirilir. Sadece sosyal destek kapsamında
+                  belirlenen düğün günü araç tahsisi ücretsiz hediye olarak
+                  sunulur.
                 </span>
               </p>
             </div>
@@ -238,44 +238,62 @@ export default function EngelsizUlasimPage() {
         </div>
       </section>
 
-      <section className="px-4 py-10 sm:px-6 sm:py-16">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.4rem] bg-gradient-to-r from-emerald-400 via-cyan-500 to-purple-500 p-[2px] shadow-2xl shadow-cyan-300/30">
-          <div className="rounded-[2.3rem] bg-[#f8ffff]/90 p-6 backdrop-blur-xl sm:p-10 lg:p-14">
-            <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-              <div>
-                <p className="bg-gradient-to-r from-emerald-600 via-cyan-600 to-purple-600 bg-[length:220%_100%] bg-clip-text text-sm font-black uppercase tracking-[0.25em] text-transparent animate-[textFlow_5s_linear_infinite]">
-                  Tamamen Ücretsiz
-                </p>
+     <section className="px-4 py-10 sm:px-6 sm:py-16">
+  <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.4rem] bg-gradient-to-r from-emerald-400 via-cyan-500 to-purple-500 p-[2px] shadow-2xl shadow-cyan-300/30">
+    <div className="rounded-[2.3rem] bg-[#f8ffff]/90 p-6 backdrop-blur-xl sm:p-10 lg:p-14">
+      <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p className="bg-gradient-to-r from-emerald-600 via-cyan-600 to-purple-600 bg-[length:220%_100%] bg-clip-text text-sm font-black uppercase tracking-[0.25em] text-transparent animate-[textFlow_5s_linear_infinite]">
+            Sosyal Destek Kapsamında Ücretsiz
+          </p>
 
-                <h2 className="mt-4 text-3xl font-black leading-tight sm:text-5xl">
-                  <span className="bg-gradient-to-r from-emerald-500 via-cyan-600 to-purple-600 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_6s_linear_infinite]">
-                    Özel gereksinimli bireyler için ücretsiz erişilebilir ulaşım.
-                  </span>
-                </h2>
+          <h2 className="mt-4 text-3xl font-black leading-tight sm:text-5xl">
+            <span className="bg-gradient-to-r from-emerald-500 via-cyan-600 to-purple-600 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_6s_linear_infinite]">
+              Düğün günlerinde araç tahsisi Mir Turizm’den hediye.
+            </span>
+          </h2>
 
-                <p className="mt-5 text-base font-semibold leading-8">
-                  <span className="bg-gradient-to-r from-emerald-700 via-cyan-700 to-purple-700 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_7s_linear_infinite]">
-                    Bu hizmet ücretli bir transfer hizmeti olarak değil,
-                    hayatı kolaylaştıran sosyal bir destek anlayışıyla
-                    hazırlanmıştır. Bilgi almak, güzergahı paylaşmak ve uygun
-                    saat için iletişime geçmeniz yeterlidir.
-                  </span>
-                </p>
-              </div>
+          <p className="mt-5 text-base font-semibold leading-8">
+            <span className="bg-gradient-to-r from-emerald-700 via-cyan-700 to-purple-700 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_7s_linear_infinite]">
+              Bu ücretsiz destek yalnızca düğün günü araç tahsisi
+              kapsamında geçerlidir. Özel gereksinimli bireylerimiz,
+              sevgi evlerinde büyüyen gençlerimiz, yaşam evlerinde kalan
+              büyüklerimiz ve gazilerimiz için uygunluk durumuna göre
+              planlanır. Diğer ulaşım hizmetleri güzergah, hizmet türü ve
+              mesafeye göre ücretlendirilir.
+            </span>
+          </p>
+        </div>
 
-              <a
-                href={`https://wa.me/${phone}?text=Merhaba,%20engelsiz%20ula%C5%9F%C4%B1m%20%C3%BCcretsiz%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
-                target="_blank"
-                rel="noreferrer"
-                className="flex min-h-16 items-center justify-center gap-3 rounded-3xl bg-gradient-to-r from-emerald-400 via-cyan-500 to-purple-500 px-7 py-5 text-base font-black text-white shadow-xl transition hover:-translate-y-1"
-              >
-                Ücretsiz Hizmet İçin Yaz
-                <MessageCircle size={22} />
-              </a>
-            </div>
+        <div className="flex flex-col gap-4">
+          <a
+            href={`https://wa.me/${phone}?text=Merhaba,%20sosyal%20destek%20kapsam%C4%B1nda%20d%C3%BC%C4%9F%C3%BCn%20g%C3%BCn%C3%BC%20ara%C3%A7%20tahsisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
+            target="_blank"
+            rel="noreferrer"
+            className="flex min-h-16 items-center justify-center gap-3 rounded-3xl bg-gradient-to-r from-emerald-400 via-cyan-500 to-purple-500 px-7 py-5 text-base font-black text-white shadow-xl transition hover:-translate-y-1"
+          >
+            Düğün Desteği İçin Yaz
+            <MessageCircle size={22} />
+          </a>
+
+          <div className="rounded-2xl border border-[#ff8a00]/40 bg-gradient-to-r from-[#ff8a00]/15 via-[#ffe66d]/20 to-[#ff8a00]/15 px-5 py-4 text-center shadow-lg backdrop-blur-xl">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#b45309]">
+              Önemli Bilgilendirme
+            </p>
+
+            <p className="mt-2 text-sm font-black leading-6 text-slate-800 sm:text-base">
+              Ücretsiz düğün aracı desteği için
+              <span className="mx-1 text-[#d97706]">
+                minimum 1 hafta öncesinden
+              </span>
+              randevu oluşturulmalıdır.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="px-4 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-7xl">
@@ -286,7 +304,7 @@ export default function EngelsizUlasimPage() {
 
             <h2 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">
               <span className="bg-gradient-to-r from-cyan-600 via-purple-600 to-amber-500 bg-[length:220%_100%] bg-clip-text text-transparent animate-[textFlow_6s_linear_infinite]">
-                Her detay ücretsiz, güvenli ve konforlu ulaşım için düşünülür.
+                Her detay güvenli, konforlu ve planlı ulaşım için düşünülür.
               </span>
             </h2>
           </div>
@@ -324,7 +342,7 @@ export default function EngelsizUlasimPage() {
       <section className="px-4 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-4 md:grid-cols-3">
-            {["/vip-1.jpg", "/vip1.jpg", "/vip-3.jpg"].map((img, index) => (
+            {["/vip2.jpg", "/vip1.jpg", "/vip-3.jpg"].map((img, index) => (
               <div
                 key={img}
                 className={`relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-cyan-200 via-purple-200 to-amber-200 p-2 shadow-xl ${
@@ -351,19 +369,20 @@ export default function EngelsizUlasimPage() {
               </div>
 
               <h2 className="text-3xl font-black leading-tight text-white sm:text-5xl">
-                Özgürlüğe giden her yol bizimle daha kolay.
+                Gideceğiniz yere güvenli ve planlı ulaşım.
               </h2>
 
               <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-white/90">
-                Gideceğiniz yeri, alınacak noktayı ve uygun zamanı paylaşın.
-                Size güvenli, konforlu ve erişilebilir ücretsiz ulaşım desteği
-                için yardımcı olalım.
+                Alınacak nokta, gidilecek yer, tarih ve saat bilgisini paylaşın.
+                Hizmet türü ve mesafeye göre size uygun fiyat bilgisi iletelim.
+                Sosyal destek kapsamındaki ücretsiz alan yalnızca düğün günü
+                araç tahsisi için geçerlidir.
               </p>
             </div>
 
             <div className="grid gap-3">
               <a
-                href={`https://wa.me/${phone}?text=Merhaba,%20engelsiz%20ula%C5%9F%C4%B1m%20%C3%BCcretsiz%20hizmetinden%20yararlanmak%20istiyorum.`}
+                href={`https://wa.me/${phone}?text=Merhaba,%20engelsiz%20ula%C5%9F%C4%B1m%20hizmeti%20i%C3%A7in%20fiyat%20almak%20istiyorum.%0AAl%C4%B1nacak%20yer:%0AGidilecek%20yer:%0ATarih%20/%20Saat:`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-white px-5 py-4 text-sm font-black text-cyan-700 shadow-xl transition hover:-translate-y-1"

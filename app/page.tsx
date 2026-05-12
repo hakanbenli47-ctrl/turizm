@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Clock,
   Gem,
+  Heart,
   HeartHandshake,
   MapPin,
   MessageCircle,
@@ -137,23 +138,25 @@ const videoCards = [
 ];
 
 const conceptSections = [
-  {
+{
   icon: Accessibility,
   title: "Engel Tanımayan Ulaşım",
   subtitle: "Asansörlü ve erişilebilir araç desteği",
-  desc: "Tam donanımlı, asansörlü ve güvenlik standartları yüksek araçlarla Özel misafirlerimize güvenli, konforlu ve huzurlu ulaşım sağlıyoruz.",
+  desc: "Tam donanımlı, asansörlü ve güvenlik standartları yüksek araçlarla özel misafirlerimize güvenli, konforlu ve huzurlu ulaşım sağlıyoruz. Mir Turizm olarak bazen bir yolculuğun sadece bir transfer değil, hayatın en anlamlı anlarına eşlik eden bir destek olduğuna inanıyoruz.",
   bullets: [
     "Asansörlü araç desteği",
     "Güvenli sabitleme sistemi",
-    "Empati odaklı destek",
-    "Ev, hastane, otel ve özel nokta transferi",
+    "Empati odaklı profesyonel yaklaşım",
+    "Sevgi evlerinde büyüyen gençler için özel gün desteği",
+    "Yaşam evlerinde kalan büyüklerimize anlamlı ulaşım desteği",
+    "Gazilerimize vefa odaklı özel gün desteği",
   ],
   image: "/vip1.jpg",
   link: "/hizmetler/engelsiz-ulasim",
 },
   {
     icon: Gem,
-    title: "VIP Transfer & Lüks Araç",
+    title: "VIP Transfer Premium & Lüks Araç",
     subtitle: "Konfor, prestij ve gizlilik",
     desc: "Havalimanı, otel, toplantı ve özel davet transferlerinde modern, geniş ve konforlu VIP araçlarla ayrıcalıklı ulaşım sunuyoruz.",
     bullets: [
@@ -757,24 +760,45 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
         <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-[#2a1044]/75 px-4 py-2 shadow-xl shadow-fuchsia-500/10 backdrop-blur-xl">
           <Sparkles size={15} className="text-[#ffb86b]" />
           <span className="text-[10px] font-black uppercase tracking-[0.24em] text-[#90e8ff] sm:text-xs">
-            Ulaşımda Destek Misyonumuz
+            Mir Turizm Sosyal Destek Projesi
           </span>
         </div>
 
         <h2 className="mt-5 text-3xl font-black leading-tight tracking-[-0.04em] text-[#ffeec7] sm:text-5xl md:text-6xl">
-          Ücretsiz
+          Özel günlerde
           <span className="block bg-[linear-gradient(90deg,#ff335f,#ff8a00,#23d5ff,#7c3aed,#ff335f)] bg-[length:300%_100%] bg-clip-text text-transparent animate-[rgbText_5s_linear_infinite]">
-            hizmetlerimiz
+            ücretsiz gelin aracı desteği
           </span>
         </h2>
       </div>
 
-      <p className="max-w-2xl text-sm font-medium leading-7 text-[#90e8ff] sm:text-base sm:leading-8 lg:ml-auto">
-        Mir Turizm olarak engelli bireyler, huzurevinde yaşayan
-        büyüklerimiz ve gazilerimiz için ulaşım hizmetlerini tamamen ücretsiz
-        sunuyoruz. Güvenli, planlı ve saygılı ulaşım desteğiyle her yolculuğu
-        özenle organize ediyoruz.
-      </p>
+      <div className="max-w-2xl lg:ml-auto">
+        <p className="text-sm font-medium leading-7 text-[#90e8ff] sm:text-base sm:leading-8">
+          Mir Turizm olarak toplumsal dayanışmayı önemsiyoruz. Engelsiz yaşam
+          desteğine ihtiyaç duyan özel bireylerimiz, sevgi evlerinde büyüyen
+          çocuklarımız, Yaşam Evlerinde Kalan Büyüklerimiz ve gazilerimiz için hayatlarının en
+          özel anlarında gelin aracı desteğini tamamen ücretsiz olarak hediye
+          ediyoruz.
+        </p>
+
+        <div className="mt-6 flex items-start gap-3 rounded-2xl border border-[#ff8a00]/40 bg-gradient-to-r from-[#ff335f]/25 via-[#ff8a00]/20 to-[#23d5ff]/25 px-5 py-4 shadow-2xl shadow-[#ff8a00]/10 backdrop-blur-xl">
+          <CalendarCheck size={24} className="mt-1 shrink-0 text-[#ffe66d]" />
+
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#fff7d6]">
+              Randevu Bilgilendirmesi
+            </p>
+
+            <p className="mt-1 text-sm font-semibold leading-6 text-[#90e8ff] sm:text-base">
+              Ücretsiz gelin aracı desteği için lütfen{" "}
+              <span className="font-black text-[#ffe66d]">
+                en az 1 hafta önceden
+              </span>{" "}
+              randevu oluşturunuz.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <motion.div
@@ -782,28 +806,35 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.12 }}
-      className="grid grid-cols-1 gap-5 md:grid-cols-3"
+      className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4"
     >
       {[
         {
           icon: Accessibility,
-          title: "Engelsiz Ulaşım",
-          desc: "Asansörlü ve erişilebilir araçlarımızla engelli bireyler için ücretsiz, güvenli ve konforlu ulaşım desteği sağlıyoruz.",
-          note: "Tam erişilebilir destek",
+          title: "Engelsiz Yaşam Desteği",
+          desc: "Hayatın özel anlarında yanında olmak istediğimiz özel bireylerimiz için gelin aracı desteğini Mir Turizm olarak ücretsiz şekilde hediye ediyoruz.",
+          note: "Engelsiz özel gün",
+          color: "from-[#7c3aed] via-[#23d5ff] to-[#ff8a00]",
+        },
+        {
+          icon: Heart,
+          title: "Sevgi Evlerinde Büyüyen Çocuklarımız",
+          desc: "Hayatlarında yeni bir sayfa açarken, bu özel günlerinde gelin aracı desteğini Mir Turizm olarak ücretsiz şekilde hediye ediyoruz.",
+          note: "Özel gün hediyesi",
           color: "from-[#ff335f] via-[#ff8a00] to-[#23d5ff]",
         },
-        {
-          icon: HeartHandshake,
-          title: "Huzurevi Sakinleri",
-          desc: "Huzurevinde yaşayan büyüklerimizin hastane, ziyaret, etkinlik ve özel gün ulaşımlarını ücretsiz olarak organize ediyoruz.",
-          note: "Saygılı ulaşım desteği",
-          color: "from-[#ff8a00] via-[#ffe66d] to-[#25D366]",
-        },
+       {
+  icon: Sparkles,
+  title: "Yaşam Evlerinde Kalan Büyüklerimiz",
+  desc: "Hayatları boyunca emek vermiş büyüklerimizin en özel anlarında yanlarında oluyor, ücretsiz gelin aracı desteği sunuyoruz.",
+  note: "Saygı ve vefa",
+  color: "from-[#ff8a00] via-[#ffe66d] to-[#25D366]",
+},
         {
           icon: ShieldCheck,
-          title: "Gazilerimize Özel",
-          desc: "Gazilerimiz için transfer, özel gün ulaşımı ve düğün aracı desteği tamamen ücretsiz olarak sunulmaktadır.",
-          note: "Onurla ücretsiz hizmet",
+          title: "Gazilerimiz",
+          desc: "Bu ülke için emek vermiş gazilerimizin özel günlerinde ulaşım değil, anlam taşıyan bir jest olarak gelin aracını ücretsiz hediye ediyoruz.",
+          note: "Onur projesi",
           color: "from-[#23d5ff] via-[#7c3aed] to-[#ff335f]",
         },
       ].map((item, index) => {
@@ -839,7 +870,7 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
                 {item.note}
               </p>
 
-              <h3 className="text-2xl font-black leading-tight tracking-[-0.03em] text-[#ffeec7]">
+              <h3 className="text-xl font-black leading-tight tracking-[-0.03em] text-[#ffeec7]">
                 {item.title}
               </h3>
 
@@ -933,12 +964,16 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
             }`}
           >
             <div className="relative h-[230px] w-full overflow-hidden sm:h-[360px] lg:h-auto lg:min-h-[380px]">
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
-              />
+             <img
+  src={item.image}
+  alt={item.title}
+  loading="lazy"
+  className={`absolute inset-0 h-full w-full transition duration-700 hover:scale-105 ${
+    item.title === "Engel Tanımayan Ulaşım"
+      ? "object-contain scale-90 object-center bg-[#12091f]"
+      : "object-cover"
+  }`}
+/>
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#12091f]/82 via-[#7c3aed]/14 to-transparent" />
 
