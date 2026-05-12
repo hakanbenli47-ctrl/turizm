@@ -284,6 +284,7 @@ export default function Home() {
           50% { transform: scale(1.08); opacity: .78; }
         }
       `}</style>
+      
       <motion.section
         initial="hidden"
         animate="show"
@@ -496,7 +497,132 @@ className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradie
           </div>
         </div>
       </motion.section>
+<motion.section
+  variants={softReveal}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.16 }}
+  className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-24"
+>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(255,51,95,0.26),transparent_30%),radial-gradient(circle_at_85%_20%,rgba(35,213,255,0.22),transparent_32%),radial-gradient(circle_at_50%_95%,rgba(255,138,0,0.20),transparent_34%),linear-gradient(135deg,#12091f_0%,#241039_48%,#102b45_100%)]" />
 
+  <div className="absolute left-[-120px] top-10 h-[320px] w-[320px] rounded-full bg-[#ff335f]/20 blur-[90px]" />
+  <div className="absolute bottom-[-120px] right-[-100px] h-[360px] w-[360px] rounded-full bg-[#23d5ff]/20 blur-[95px]" />
+
+  <div className="relative z-10 mx-auto max-w-7xl">
+    <div className="mb-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+      <div>
+        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-[#2a1044]/75 px-4 py-2 shadow-xl shadow-fuchsia-500/10 backdrop-blur-xl">
+          <Sparkles size={15} className="text-[#ffb86b]" />
+          <span className="text-[10px] font-black uppercase tracking-[0.24em] text-[#90e8ff] sm:text-xs">
+            Ulaşımda Destek Misyonumuz
+          </span>
+        </div>
+
+        <h2 className="mt-5 text-3xl font-black leading-tight tracking-[-0.04em] text-[#ffeec7] sm:text-5xl md:text-6xl">
+          Ücretsiz
+          <span className="block bg-[linear-gradient(90deg,#ff335f,#ff8a00,#23d5ff,#7c3aed,#ff335f)] bg-[length:300%_100%] bg-clip-text text-transparent animate-[rgbText_5s_linear_infinite]">
+            hizmetlerimiz
+          </span>
+        </h2>
+      </div>
+
+      <p className="max-w-2xl text-sm font-medium leading-7 text-[#90e8ff] sm:text-base sm:leading-8 lg:ml-auto">
+        Sezen / Mir Turizm olarak engelli bireyler, huzurevinde yaşayan
+        büyüklerimiz ve gazilerimiz için ulaşım hizmetlerini tamamen ücretsiz
+        sunuyoruz. Güvenli, planlı ve saygılı ulaşım desteğiyle her yolculuğu
+        özenle organize ediyoruz.
+      </p>
+    </div>
+
+    <motion.div
+      variants={staggerParent}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.12 }}
+      className="grid grid-cols-1 gap-5 md:grid-cols-3"
+    >
+      {[
+        {
+          icon: Accessibility,
+          title: "Engelsiz Ulaşım",
+          desc: "Asansörlü ve erişilebilir araçlarımızla engelli bireyler için ücretsiz, güvenli ve konforlu ulaşım desteği sağlıyoruz.",
+          note: "Tam erişilebilir destek",
+          color: "from-[#ff335f] via-[#ff8a00] to-[#23d5ff]",
+        },
+        {
+          icon: HeartHandshake,
+          title: "Huzurevi Sakinleri",
+          desc: "Huzurevinde yaşayan büyüklerimizin hastane, ziyaret, etkinlik ve özel gün ulaşımlarını ücretsiz olarak organize ediyoruz.",
+          note: "Saygılı ulaşım desteği",
+          color: "from-[#ff8a00] via-[#ffe66d] to-[#25D366]",
+        },
+        {
+          icon: ShieldCheck,
+          title: "Gazilerimize Özel",
+          desc: "Gazilerimiz için transfer, özel gün ulaşımı ve düğün aracı desteği tamamen ücretsiz olarak sunulmaktadır.",
+          note: "Onurla ücretsiz hizmet",
+          color: "from-[#23d5ff] via-[#7c3aed] to-[#ff335f]",
+        },
+      ].map((item, index) => {
+        const Icon = item.icon;
+
+        return (
+          <motion.div
+            variants={cardReveal}
+            key={item.title}
+            className="group relative overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#241039]/90 p-[1px] shadow-[0_25px_90px_rgba(15,23,42,0.22)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_35px_120px_rgba(35,213,255,0.18)] sm:rounded-[2.6rem]"
+          >
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-25 transition duration-500 group-hover:opacity-45`}
+            />
+
+            <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#23d5ff]/25 blur-3xl transition duration-500 group-hover:scale-125" />
+            <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-[#ff335f]/25 blur-3xl transition duration-500 group-hover:scale-125" />
+
+            <div className="relative h-full rounded-[1.95rem] bg-[#1d102f]/88 p-5 backdrop-blur-xl sm:rounded-[2.5rem] sm:p-6">
+              <div className="mb-6 flex items-start justify-between gap-4">
+                <div
+                  className={`flex h-16 w-16 items-center justify-center rounded-[1.4rem] bg-gradient-to-br ${item.color} text-[#fff7d6] shadow-2xl shadow-fuchsia-500/20`}
+                >
+                  <Icon size={30} />
+                </div>
+
+                <div className="rounded-full border border-cyan-300/20 bg-[#12091f]/70 px-3 py-1 text-[10px] font-black text-[#ffb86b]">
+                  0{index + 1}
+                </div>
+              </div>
+
+              <p className="mb-3 inline-flex rounded-full bg-[#23d5ff]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[#90e8ff]">
+                {item.note}
+              </p>
+
+              <h3 className="text-2xl font-black leading-tight tracking-[-0.03em] text-[#ffeec7]">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 text-sm font-medium leading-7 text-[#90e8ff]">
+                {item.desc}
+              </p>
+
+              <div className="mt-6 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
+
+              <div className="mt-5 flex items-center justify-between">
+                <span className="bg-[linear-gradient(90deg,#ffe66d,#ff8a00,#23d5ff)] bg-clip-text text-sm font-black text-transparent">
+                  Tamamen ücretsiz
+                </span>
+
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#ff335f] via-[#ff8a00] to-[#23d5ff] text-[#fff7d6] shadow-lg shadow-fuchsia-500/20">
+                  <ArrowRight size={17} />
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  </div>
+</motion.section>
       <motion.section
         variants={softReveal}
         initial="hidden"
