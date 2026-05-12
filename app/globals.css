@@ -41,7 +41,39 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+@keyframes rgbFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+@keyframes textFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
 
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes rgbText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
 main,
 section,
 header,
